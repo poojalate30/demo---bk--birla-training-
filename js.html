@@ -1,0 +1,33 @@
+function  sayhelloclass(className){
+    console.log("Good morning",className);
+}
+
+function sum(a,b){
+    const result = a+b
+    console.log("before result")
+    return result
+}
+    console.log(sum(10,20));
+    let result=sum(10,20)
+    console.log("result")
+
+function max(){
+    let numArr = [23,55,3,22,78];
+    let max = numArr[0];
+
+    for(let i =0 ;i<numArr.length;i++){
+        if(max<numArr[i]){
+            max=numArr[i]
+        }
+    }
+    return max;
+}
+const maxVal = max([23,55,3,22,78])
+console.log(maxVal);
+
+
+function sum (a,b){
+    return a+b
+}
+const sumTwo=(a,b) => a+b
+console.log(sumTwo(34,56));

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is a js demo</h1>
+    
+    <p id="para-1">This is paragraph</p> 
+    <div id="div-1"></div>
+    <button id="click-me-btn">Click Me</button>
+    <br><br>
+    <form id="user-form">
+        <label>Name</label>
+        <input type="text" name="name" id="firstName"/><br><br>
+
+        <label>Age</label>
+        <input type="number" name="age" id ="age"/><br><br>
+
+        <label>Email</label>
+        <input type="text" name="email" id="email"/><br><br>
+
+        <button type="submit">Submit</button>
+        <div id="formDetails"></div>
+    </form>
+
+    <script>
+        const userForm = document.getElementById("user-form");
+        
+        const formDetails = document.getElementById("formDetails");
+
+        userForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const firstName = document.getElementById("firstName").value;
+            const age = document.getElementById("age").value;
+            const email = document.getElementById("email").value;
+
+            if (age < 18) {
+                return alert("User not allowed");
+            }
+
+            const pElement = document.createElement("p");
+            pElement.textContent = `Name: ${firstName}
+Age: ${age}
+Email: ${email}`;
+
+            formDetails.appendChild(pElement);
+        });
+
+        const clickMeBtn = document.getElementById("click-me-btn");
+        const para1 = document.getElementById("para-1");
+        clickMeBtn.addEventListener("click", () => {
+            para1.style.color = "pink";
+            para1.textContent = "This is paragraph";
+            document.body.style.backgroundColor="red";
+
+        });
+
+        const div1 = document.getElementById("div-1");
+        const myName = "lina";
+
+        div1.innerHTML = "<h1>Good Morning " + myName + "</h1>";
+    </script>
+
+    <script src="index.js"></script>
+
+    <script>
+        console.log("hello everyone");
+    </script>
+</body>
+</html>
